@@ -61,7 +61,7 @@ setup(name='pyams_apm',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
-          'elasticapm',
+          'elastic-apm',
           'pyramid'
       ],
       entry_points="")
