@@ -2,6 +2,8 @@
 !/.installed.cfg
 !/eggs/
 !/bin/
+!/build/
+!/dist/
 !/parts/
 !/develop-eggs/
 !/src/pyams_apm.egg-info/

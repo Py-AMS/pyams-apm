@@ -23,13 +23,10 @@ DOCS = os.path.join(os.path.dirname(__file__),
 README = os.path.join(DOCS, 'README.txt')
 HISTORY = os.path.join(DOCS, 'HISTORY.txt')
 
-version = '1.0.0'
+version = '1.0.1'
 long_description = open(README).read() + '\n\n' + open(HISTORY).read()
 
-tests_require = [
-    'pyramid_zcml',
-    'zope.exceptions'
-]
+tests_require = []
 
 setup(name='pyams_apm',
       version=version,
@@ -53,6 +50,7 @@ setup(name='pyams_apm',
       include_package_data=True,
       package_data={'': ['*.zcml', '*.txt', '*.pt', '*.pot', '*.po', '*.mo',
                          '*.png', '*.gif', '*.jpeg', '*.jpg', '*.css', '*.js']},
+      python_requires='>=3.5',
       zip_safe=False,
       # uncomment this to be able to run tests with setup.py
       test_suite="pyams_apm.tests.test_utilsdocs.test_suite",
