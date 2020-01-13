@@ -37,7 +37,7 @@ class ChameleonCookingInstrumentation(AbstractInstrumentedModule):
                           span_subtype='chameleon',
                           span_action='cook',
                           extra={'filename': instance.filename},
-                          leaf=True):
+                          leaf=False):
             return wrapped(*args, **kwargs)
 
 
@@ -56,5 +56,5 @@ class ChameleonRenderingInstrumentation(AbstractInstrumentedModule):
                           span_subtype='chameleon',
                           span_action='render',
                           extra={'filename': instance.filename},
-                          leaf=True):
+                          leaf=False):
             return wrapped(*args, **kwargs)
