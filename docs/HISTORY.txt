@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.0.2
+-----
+ - remove "leaf" attribute on Chameleon instrumentations
+
 1.0.1
 -----
  - updated packaging and requirements

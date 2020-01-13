@@ -7,3 +7,5 @@
 !/parts/
 !/develop-eggs/
 !/src/pyams_apm.egg-info/
+/.scannerwork/
+!/coverage.xml

@@ -15,7 +15,8 @@ and content management with the Pyramid framework.
 see PyAMS_content package), but many features are generic and can be used inside any kind of web
 application.
 
-All PyAMS documentation is available on `ReadTheDocs <https://pyams.readthedocs.io>`_
+All PyAMS documentation is available on `ReadTheDocs <https://pyams.readthedocs.io>`_; source code
+is available on `Gitlab <https://gitlab.com/pyams>`_.
 
 
 What is Elastic-APM?
