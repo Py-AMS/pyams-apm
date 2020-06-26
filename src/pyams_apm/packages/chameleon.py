@@ -51,10 +51,20 @@ class ChameleonRenderingInstrumentation(AbstractInstrumentedModule):
     def call(self, module, method, wrapped, instance, args, kwargs):
         # pylint: disable=too-many-arguments
         """Wrapped method call"""
+        view = kwargs.get('view')
+        context = kwargs.get('context')
         with capture_span('RENDER',
                           span_type='template',
                           span_subtype='chameleon',
                           span_action='render',
-                          extra={'filename': instance.filename},
+                          extra={
+                              'view': '{}.{}'.format(view.__class__.__module__,
+                                                     view.__class__.__name__)
+                              if view is not None else None,
+                              'context': '{}.{}'.format(context.__class__.__module__,
+                                                        context.__class__.__name__)
+                              if context is not None else None,
+                              'filename': instance.filename
+                          },
                           leaf=False):
             return wrapped(*args, **kwargs)
