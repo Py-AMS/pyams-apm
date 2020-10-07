@@ -8,7 +8,7 @@ Introduction
 This package is composed of a set of utility functions, usable into any Pyramid application.
 
     >>> from pyramid.testing import setUp, tearDown
-    >>> config = setUp()
+    >>> config = setUp(hook_zca=True)
 
     >>> from pyams_apm.include import include_package as include_apm
     >>> include_apm(config)
