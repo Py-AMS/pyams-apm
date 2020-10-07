@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.0.5
+-----
+ - added constant for LDAP3 DB span name
+ - updated doctest with ZCA hook
+
 1.0.4
 -----
  - updated Chameleon instrumentation
