@@ -22,6 +22,9 @@ from elasticapm.traces import capture_span
 __docformat__ = 'restructuredtext'
 
 
+LDAP_DB_SPAN = 'db.ldap'
+
+
 class LDAP3OpenInstrumentation(AbstractInstrumentedModule):
     """LDAP3 connection opening instrumentation"""
 
@@ -35,7 +38,7 @@ class LDAP3OpenInstrumentation(AbstractInstrumentedModule):
     def call(self, module, method, wrapped, instance, args, kwargs):
         # pylint: disable=too-many-arguments
         """Wrapped method call"""
-        with capture_span('LDAP.OPEN', "db.ldap", leaf=True):
+        with capture_span('LDAP.OPEN', LDAP_DB_SPAN, leaf=True):
             return wrapped(*args, **kwargs)
 
 
@@ -49,7 +52,7 @@ class LDAP3BindInstrumentation(AbstractInstrumentedModule):
     def call(self, module, method, wrapped, instance, args, kwargs):
         # pylint: disable=too-many-arguments
         """Wrapped method call"""
-        with capture_span('LDAP.BIND', "db.ldap", leaf=True):
+        with capture_span('LDAP.BIND', LDAP_DB_SPAN, leaf=True):
             return wrapped(*args, **kwargs)
 
 
@@ -63,7 +66,7 @@ class LDAP3SearchInstrumentation(AbstractInstrumentedModule):
     def call(self, module, method, wrapped, instance, args, kwargs):
         # pylint: disable=too-many-arguments
         """Wrapped method call"""
-        with capture_span('LDAP.SEARCH', "db.ldap", {
+        with capture_span('LDAP.SEARCH', LDAP_DB_SPAN, {
             'db': {
                 'type': 'ldap',
                 'statement': kwargs.get('search_filter') or args[1]
@@ -85,5 +88,5 @@ class LDAP3GetResponseInstrumentation(AbstractInstrumentedModule):
     def call(self, module, method, wrapped, instance, args, kwargs):
         # pylint: disable=too-many-arguments
         """Wrapped method call"""
-        with capture_span('LDAP.GET_RESPONSE', "db.ldap", leaf=True):
+        with capture_span('LDAP.GET_RESPONSE', LDAP_DB_SPAN, leaf=True):
             return wrapped(*args, **kwargs)
