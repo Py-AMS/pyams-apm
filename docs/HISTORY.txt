@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.1.0
+-----
+ - updated Chameleon spans capture
+ - removed support for Python < 3.7
+ - updated doctests
+
 1.0.6
 -----
  - removed Travis-CI configuration

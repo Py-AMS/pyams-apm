@@ -14,6 +14,12 @@ This package is composed of a set of utility functions, usable into any Pyramid 
     >>> from pyams_apm.include import include_package as include_apm
     >>> include_apm(config)
 
+    >>> from pyramid.events import ApplicationCreated
+    >>> from pyams_apm.include import handle_apm_application
+
+    >>> event = ApplicationCreated(None)
+    >>> handle_apm_application(event)
+
     >>> from pyramid.response import Response
     >>> def handler(request):
     ...     response = Response()
