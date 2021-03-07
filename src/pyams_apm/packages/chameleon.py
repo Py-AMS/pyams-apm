@@ -36,7 +36,9 @@ class ChameleonCookingInstrumentation(AbstractInstrumentedModule):
                           span_type='template',
                           span_subtype='chameleon',
                           span_action='cook',
-                          extra={'filename': instance.filename},
+                          labels={
+                              'filename': instance.filename
+                          },
                           leaf=False):
             return wrapped(*args, **kwargs)
 
@@ -57,7 +59,7 @@ class ChameleonRenderingInstrumentation(AbstractInstrumentedModule):
                           span_type='template',
                           span_subtype='chameleon',
                           span_action='render',
-                          extra={
+                          labels={
                               'view': '{}.{}'.format(view.__class__.__module__,
                                                      view.__class__.__name__)
                               if view is not None else None,
