@@ -85,6 +85,7 @@ class elastic_apm_tween_factory:  # pylint: disable=invalid-name
             service_name=config.get("elasticapm.service_name"),
             service_version=service_version,
             secret_token=config.get("elasticapm.secret_token"),
+            environment=config.get("elasticapm.environment"),
             include_paths=list_from_setting(config, "elasticapm.include_paths"),
             exclude_paths=list_from_setting(config, "elasticapm.exclude_paths"),
             debug=asbool(config.get('elasticapm.debug'))
