@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.2
+-----
+ - handle APM environment setting
+
 1.1.1
 -----
  - updated Gitlab-CI configuration
