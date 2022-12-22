@@ -17,12 +17,13 @@ with APM, sending requests frames to the APM server.
 """
 
 import sys
-import pkg_resources
 
 import elasticapm
-from elasticapm.utils import compat, get_url_dict
+import pkg_resources
+from elasticapm.utils import get_url_dict
 from pyramid.compat import reraise
 from pyramid.settings import asbool
+
 
 __docformat__ = 'restructuredtext'
 
@@ -58,7 +59,7 @@ def get_data_from_response(response):
     if response.headers:
         data["headers"] = {
             key: ";".join(response.headers.getall(key))
-            for key in compat.iterkeys(response.headers)
+            for key in response.headers.keys()
         }
     return data
 
