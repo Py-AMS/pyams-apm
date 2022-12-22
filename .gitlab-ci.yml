@@ -28,7 +28,8 @@ bootstrap:
 test-3.7:
     stage: test
     script:
-        - pip install anybadge==1.14.0 coverage==6.5.0
+        - pip install anybadge==1.14.0 coverage==6.5.0 zc.buildout==3.0.1
+        - buildout
         - mkdir ./coverage
         - coverage erase
         - coverage run ./bin/test | tee ./coverage/coverage.log
@@ -45,7 +46,8 @@ pylint:
     stage: quality
     allow_failure: true
     script:
-        - pip install pylint-exit anybadge
+        - pip install pylint-exit anybadge zc.buildout==3.0.1
+        - buildout
         - mkdir ./pylint
         - ./bin/pylint src/pyams_apm/ | tee ./pylint/pylint.log || pylint-exit $?
         - PYLINT_SCORE=$(sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' ./pylint/pylint.log)
@@ -76,6 +78,7 @@ coverage:
 build-3.7:
     stage: build
     script:
+        - pip install zc.buildout==3.0.1
         - buildout setup setup.py clean --all sdist bdist_egg bdist_wheel
     artifacts:
         paths:
