@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.1.5
+-----
+ - added support for Python 3.10 and 3.11
+ - updated Gitlab-CI configuration
+
 1.1.4
 -----
  - updated Gitlab-CI configuration
