@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.1
+-----
+ - updated buildout and dependencies
+
 2.0.0
 -----
  - upgraded for Pyramid 2.0
