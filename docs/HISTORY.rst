@@ -1,6 +1,14 @@
 Changelog
 =========
 
+2.0.3
+-----
+ - merge from master
+
+2.0.2
+-----
+ - updated buildout and dependencies
+
 2.0.1
 -----
  - updated buildout and dependencies
