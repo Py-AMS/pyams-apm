@@ -60,6 +60,6 @@ setup(name='pyams_apm',
           'setuptools',
           # -*- Extra requirements: -*-
           'elastic-apm',
-          'pyramid'
+          'pyramid >= 2.0.0'
       ],
       entry_points="")
