@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.0
+-----
+ - upgraded for Pyramid 2.0
+
 1.1.5
 -----
  - added support for Python 3.10 and 3.11
