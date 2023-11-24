@@ -21,9 +21,8 @@ import sys
 import elasticapm
 import pkg_resources
 from elasticapm.utils import get_url_dict
-from pyramid.compat import reraise
 from pyramid.settings import asbool
-
+from pyramid.util import reraise
 
 __docformat__ = 'restructuredtext'
 
