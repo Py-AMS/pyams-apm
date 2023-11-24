@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.4
+-----
+ - updated Gitlab-CI
+
 2.0.3
 -----
  - merge from master
