@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.5
+-----
+ - updated Buildout configuration
+
 2.0.4
 -----
  - updated Gitlab-CI
