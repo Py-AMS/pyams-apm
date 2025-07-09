@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.7
+-----
+ - packaging issue
+
 2.0.6
 -----
  - updated APM client settings configuration
