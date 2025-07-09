@@ -60,6 +60,7 @@ setup(name='pyams_apm',
           'setuptools',
           # -*- Extra requirements: -*-
           'elastic-apm',
+          "importlib_metadata; python_version < '3.9'",
           'pyramid >= 2.0.0'
       ],
       entry_points="")

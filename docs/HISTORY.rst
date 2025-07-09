@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.0.6
+-----
+ - updated APM client settings configuration
+ - added support for Python 3.12
+
 2.0.5
 -----
  - updated Buildout configuration
