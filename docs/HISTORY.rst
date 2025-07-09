@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.8
+-----
+ - updated Gitlab-CI configuration
+
 2.0.7
 -----
  - packaging issue
