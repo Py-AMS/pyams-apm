@@ -17,9 +17,12 @@ with APM, sending requests frames to the APM server.
 """
 
 import sys
-
+try:
+    from importlib.metadata import PackageNotFoundError, distribution
+except ImportError:
+    from importlib_metadata import PackageNotFoundError, distribution
+    
 import elasticapm
-import pkg_resources
 from elasticapm.utils import get_url_dict
 from pyramid.settings import asbool
 from pyramid.util import reraise
@@ -73,18 +76,22 @@ class elastic_apm_tween_factory:  # pylint: disable=invalid-name
         service_version = config.get("elasticapm.service_version")
         if service_version:
             try:
-                service_version = pkg_resources.get_distribution(service_version).version
-            except pkg_resources.DistributionNotFound:
+                service_version = distribution(service_version).version
+            except PackageNotFoundError:
                 pass
         self.client = elasticapm.Client(
             server_url=config.get("elasticapm.server_url"),
+            server_cert=config.get('elasticapm.server_cert'),
+            verify_server_cert=asbool(config.get('elasticapm.verify_server_cert')),
+            server_ca_cert_file=config.get('elasticapm.server_ca_cert_file'),
             server_timeout=config.get("elasticapm.server_timeout"),
             name=config.get("elasticapm.name"),
             framework_name="Pyramid",
-            framework_version=pkg_resources.get_distribution("pyramid").version,
+            framework_version=distribution("pyramid").version,
             service_name=config.get("elasticapm.service_name"),
             service_version=service_version,
             secret_token=config.get("elasticapm.secret_token"),
+            api_key=config.get('elasticapm.api_key'),
             environment=config.get("elasticapm.environment"),
             include_paths=list_from_setting(config, "elasticapm.include_paths"),
             exclude_paths=list_from_setting(config, "elasticapm.exclude_paths"),
