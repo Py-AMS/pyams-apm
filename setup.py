@@ -26,7 +26,10 @@ HISTORY = os.path.join(DOCS, 'HISTORY.rst')
 version = '2.0.8'
 long_description = open(README).read() + '\n\n' + open(HISTORY).read()
 
-tests_require = []
+tests_require = [
+    'pyramid',
+    'elastic-apm'
+]
 
 setup(name='pyams_apm',
       version=version,
