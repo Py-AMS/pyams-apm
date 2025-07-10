@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.9
+-----
+ - Buildout packaging issue
+
 2.0.8
 -----
  - updated Gitlab-CI configuration
